@@ -1,0 +1,516 @@
+Screen {
+    layout: vertical;
+    background: #ffffff;
+    color: #111111;
+}
+
+Screen:ansi {
+    background: ansi_white;
+    color: ansi_black;
+}
+
+#title-bar {
+    dock: top;
+    height: 2;
+    padding: 0 2;
+    background: #f3f4f6;
+    color: #111111;
+    text-style: bold;
+}
+
+#title-bar:ansi {
+    background: ansi_white;
+    color: ansi_black;
+}
+
+#title-subtitle {
+    dock: top;
+    height: 1;
+    padding: 0 2;
+    background: #ffffff;
+    color: #374151;
+}
+
+#title-subtitle:ansi {
+    background: ansi_white;
+    color: ansi_black;
+}
+
+#main-layout {
+    height: 1fr;
+    layout: horizontal;
+    padding: 1;
+}
+
+#main-layout.narrow {
+    layout: vertical;
+}
+
+.panel {
+    width: 1fr;
+    height: 1fr;
+    margin: 0 1 0 0;
+    padding: 1 2;
+    border: round #1f2937;
+    background: #ffffff;
+    color: #111111;
+}
+
+.panel:ansi {
+    border: round ansi_black;
+    background: ansi_white;
+    color: ansi_black;
+}
+
+#main-layout.narrow .panel {
+    margin: 0 0 1 0;
+}
+
+#main-layout.narrow #detail-panel {
+    margin: 0;
+}
+
+#form-panel,
+#detail-panel {
+    scrollbar-background: #f3f4f6;
+    scrollbar-color: #2563eb;
+    scrollbar-color-hover: #1d4ed8;
+    scrollbar-size-vertical: 1;
+}
+
+#detail-panel {
+    margin: 0;
+}
+
+.panel-title {
+    color: #111111;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+.panel-title:ansi {
+    color: ansi_black;
+}
+
+.field-label {
+    color: #374151;
+    margin-top: 1;
+}
+
+.section-gap {
+    margin-top: 2;
+}
+
+.field-label:ansi {
+    color: ansi_black;
+}
+
+.helper-text {
+    color: #4b5563;
+    margin-top: 1;
+}
+
+.helper-text:ansi {
+    color: ansi_black;
+}
+
+.muted-text {
+    color: #6b7280;
+}
+
+.muted-text:ansi {
+    color: ansi_black;
+    text-style: dim;
+}
+
+.detail-label {
+    margin-top: 0;
+}
+
+TextArea,
+Input,
+Select {
+    width: 1fr;
+    color: #111111;
+    background: #ffffff;
+    border: round #4b5563;
+}
+
+TextArea:ansi,
+Input:ansi,
+Select:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: round ansi_black;
+}
+
+TextArea {
+    height: 8;
+}
+
+OptionList {
+    width: 1fr;
+    height: 7;
+    margin-top: 1;
+    color: #111111;
+    background: #ffffff;
+    border: round #4b5563;
+}
+
+OptionList:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: round ansi_black;
+}
+
+OptionList:focus {
+    border: round #005fcc;
+}
+
+OptionList:focus:ansi {
+    border: round ansi_blue;
+}
+
+OptionList:disabled {
+    color: #111111;
+    background: #e5e7eb;
+    border: round #6b7280;
+    text-style: dim;
+}
+
+OptionList:disabled:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: round ansi_black;
+    text-style: dim;
+}
+
+TextArea:focus,
+Input:focus,
+Select:focus {
+    border: round #005fcc;
+}
+
+TextArea:focus:ansi,
+Input:focus:ansi,
+Select:focus:ansi {
+    border: round ansi_blue;
+}
+
+TextArea:disabled,
+Input:disabled,
+Select:disabled {
+    color: #111111;
+    background: #e5e7eb;
+    border: round #6b7280;
+    text-style: dim;
+}
+
+TextArea:disabled:ansi,
+Input:disabled:ansi,
+Select:disabled:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: round ansi_black;
+    text-style: dim;
+}
+
+SelectCurrent {
+    color: #111111;
+    background: #ffffff;
+    border: tall #4b5563;
+}
+
+SelectCurrent:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_black;
+}
+
+Select:focus > SelectCurrent,
+Select.-expanded > SelectCurrent {
+    color: #111111;
+    background: #ffffff;
+    border: tall #005fcc;
+}
+
+Select:focus > SelectCurrent:ansi,
+Select.-expanded > SelectCurrent:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_blue;
+}
+
+SelectCurrent Static#label {
+    color: #111111;
+    background: transparent;
+}
+
+SelectCurrent:ansi Static#label {
+    color: ansi_black;
+    background: transparent;
+}
+
+SelectCurrent .arrow {
+    color: #111111;
+    background: transparent;
+}
+
+SelectCurrent:ansi .arrow {
+    color: ansi_black;
+    background: transparent;
+}
+
+Select:disabled > SelectCurrent {
+    color: #111111;
+    background: #e5e7eb;
+    border: tall #6b7280;
+    text-style: dim;
+}
+
+Select:disabled > SelectCurrent Static#label,
+Select:disabled > SelectCurrent .arrow {
+    color: #111111;
+}
+
+Select:disabled > SelectCurrent:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_black;
+    text-style: dim;
+}
+
+Select:disabled > SelectCurrent:ansi Static#label,
+Select:disabled > SelectCurrent:ansi .arrow {
+    color: ansi_black;
+}
+
+Select > SelectOverlay {
+    color: #111111;
+    background: #ffffff;
+    border: tall #005fcc;
+}
+
+Select > SelectOverlay:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_blue;
+}
+
+Select > SelectOverlay > .option-list--option {
+    color: #111111;
+    background: #ffffff;
+    padding: 0 1;
+}
+
+Select > SelectOverlay:ansi > .option-list--option {
+    color: ansi_black;
+    background: ansi_white;
+}
+
+Select > SelectOverlay > .option-list--option-highlighted {
+    color: #ffffff;
+    background: #005fcc;
+    text-style: bold;
+}
+
+Select > SelectOverlay:ansi > .option-list--option-highlighted {
+    color: ansi_white;
+    background: ansi_blue;
+    text-style: bold;
+}
+
+Select > SelectOverlay > .option-list--option-hover {
+    color: #111111;
+    background: #dbeafe;
+}
+
+Select > SelectOverlay:ansi > .option-list--option-hover {
+    color: ansi_black;
+    background: ansi_white;
+    text-style: reverse;
+}
+
+Select > SelectOverlay > .option-list--option-disabled {
+    color: #111111;
+    background: #e5e7eb;
+    text-style: dim;
+}
+
+Select > SelectOverlay:ansi > .option-list--option-disabled {
+    color: ansi_black;
+    background: ansi_white;
+    text-style: dim;
+}
+
+Select > SelectOverlay > .option-list--separator {
+    color: #6b7280;
+    background: #ffffff;
+}
+
+Select > SelectOverlay:ansi > .option-list--separator {
+    color: ansi_black;
+    background: ansi_white;
+    text-style: dim;
+}
+
+Button {
+    width: 1fr;
+    margin-top: 1;
+    text-style: bold;
+    color: #111111;
+    background: #ffffff;
+    border: none;
+    border-top: tall #4b5563;
+    border-bottom: tall #4b5563;
+}
+
+Button:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_black;
+}
+
+Button:focus {
+    border-top: tall #005fcc;
+    border-bottom: tall #005fcc;
+}
+
+Button:focus:ansi {
+    border: tall ansi_blue;
+}
+
+#generate-button,
+Button.-success {
+    color: #ffffff;
+    background: #111111;
+    border: none;
+    border-top: tall #111111;
+    border-bottom: tall #111111;
+}
+
+#generate-button:ansi,
+Button.-success:ansi {
+    color: ansi_white;
+    background: ansi_black;
+    border: tall ansi_black;
+}
+
+#generate-button:focus,
+Button.-success:focus {
+    color: #ffffff;
+    background: #111111;
+    border-top: tall #005fcc;
+    border-bottom: tall #005fcc;
+}
+
+#generate-button:focus:ansi,
+Button.-success:focus:ansi {
+    color: ansi_white;
+    background: ansi_black;
+    border: tall ansi_blue;
+}
+
+Button:disabled,
+#generate-button:disabled,
+Button.-success:disabled {
+    color: #111111;
+    background: #d1d5db;
+    border-top: tall #6b7280;
+    border-bottom: tall #6b7280;
+    text-style: bold;
+}
+
+Button:disabled:ansi,
+#generate-button:disabled:ansi,
+Button.-success:disabled:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: tall ansi_black;
+    text-style: bold;
+}
+
+.reference-actions {
+    layout: grid;
+    grid-size: 2 2;
+    grid-columns: 1fr 1fr;
+    grid-rows: auto auto;
+    grid-gutter: 1 1;
+    margin-top: 1;
+}
+
+.reference-actions Button {
+    margin-top: 0;
+    width: 1fr;
+}
+
+#status-strip {
+    height: auto;
+    min-height: 3;
+    margin-bottom: 1;
+    padding: 0 1;
+    border: round #4b5563;
+    background: #f9fafb;
+    align: left middle;
+}
+
+#status-strip:ansi {
+    border: round ansi_black;
+    background: ansi_white;
+}
+
+#run-state {
+    width: 1fr;
+    color: #111111;
+    text-style: bold;
+}
+
+#run-state:ansi {
+    color: ansi_black;
+}
+
+#run-spinner {
+    margin-right: 1;
+    color: #005fcc;
+}
+
+#run-spinner:ansi {
+    color: ansi_blue;
+}
+
+.hidden {
+    display: none;
+}
+
+.detail-value {
+    min-height: 3;
+    padding: 0 1;
+    color: #111111;
+    background: #ffffff;
+    border: round #4b5563;
+}
+
+.detail-value:ansi {
+    color: ansi_black;
+    background: ansi_white;
+    border: round ansi_black;
+}
+
+.detail-multiline {
+    min-height: 4;
+}
+
+.detail-log {
+    min-height: 6;
+}
+
+Footer {
+    dock: bottom;
+    background: #f3f4f6;
+    color: #111111;
+}
+
+Footer:ansi {
+    background: ansi_white;
+    color: ansi_black;
+}

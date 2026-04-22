@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codex_canvas"
+version = "0.1.0"
+description = "Textual TUI for generating images through local codex exec"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+keywords = [
+  "codex",
+  "image-generation",
+  "textual",
+  "tui",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Software Development :: User Interfaces",
+  "Topic :: Terminals",
+]
+dependencies = [
+  "textual>=0.63.0",
+]
+
+[project.scripts]
+codexcanvas = "codex_canvas.app:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.0",
+  "ruff>=0.11.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/codex_canvas"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/codex_canvas/app.tcss" = "codex_canvas/app.tcss"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/.github/workflows/ci.yml",
+  "/CONTRIBUTING.md",
+  "/LICENSE",
+  "/README.md",
+  "/pyproject.toml",
+  "/src/codex_canvas",
+  "/tests",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
